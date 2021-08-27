@@ -18,21 +18,21 @@ module.exports = app => {
 	);
 
 	//FACEBOOK ROUTES
-	app.get('/auth/facebook', passport.authenticate('facebook', {
-			scope: ['public_profile', 'email']
-		}, (err, user) => {
-			if (err) throw err;
-
-		}
-	));
-
-	app.get(
-		'/auth/facebook/callback',
-		passport.authenticate('facebook'),
-		(req, res) => {
-			res.redirect('/dashboard');
-		}
-	);
+	// app.get('/auth/facebook', passport.authenticate('facebook', {
+	// 		scope: ['public_profile', 'email']
+	// 	}, (err, user) => {
+	// 		if (err) throw err;
+	//
+	// 	}
+	// ));
+	//
+	// app.get(
+	// 	'/auth/facebook/callback',
+	// 	passport.authenticate('facebook'),
+	// 	(req, res) => {
+	// 		res.redirect('/dashboard');
+	// 	}
+	// );
 
 	//LOGOUT
 	app.get('/api/logout', (req, res) => {

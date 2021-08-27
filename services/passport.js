@@ -34,20 +34,20 @@ passport.use(
 );
 
 //FACEBOOK STRATEGY
-passport.use(
-	new FacebookStrategy
-	({
-			clientID: process.env.FACEBOOK_APP_ID,
-			clientSecret: process.env.FACEBOOK_SECRET,
-			callbackURL: '/auth/facebook/callback',
-		},
-		async (accessToken, refreshToken, profile, done) => {
-			const existingUser = await User.findOne({userAuthId: profile.id});
-			if (existingUser) {
-				return done(null, existingUser);
-			}
-
-			const user = await new User({userAuthId: profile.id}).save();
-			done(null, user);
-		}
-	));
+// passport.use(
+// 	new FacebookStrategy
+// 	({
+// 			clientID: process.env.FACEBOOK_APP_ID,
+// 			clientSecret: process.env.FACEBOOK_SECRET,
+// 			callbackURL: '/auth/facebook/callback',
+// 		},
+// 		async (accessToken, refreshToken, profile, done) => {
+// 			const existingUser = await User.findOne({userAuthId: profile.id});
+// 			if (existingUser) {
+// 				return done(null, existingUser);
+// 			}
+//
+// 			const user = await new User({userAuthId: profile.id}).save();
+// 			done(null, user);
+// 		}
+// 	));
