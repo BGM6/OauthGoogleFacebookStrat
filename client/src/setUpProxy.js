@@ -7,10 +7,10 @@ module.exports = function (app) {
 		})
 	)
 
-		app.use(
-			['/api', '/auth/facebook'],
-			createProxyMiddleware({
-				target: 'http://localhost:5000',
-			})
-		);
+		// app.use(
+		// 	['/api', '/auth/facebook'],
+		// 	createProxyMiddleware({
+		// 		target: 'http://localhost:5000',
+		// 	})
+		// );
 };
