@@ -28,6 +28,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Always place this after your routes
 if (process.env.NODE_ENV === 'production') {
 	// Set static folder
 	app.use(express.static('client/build'));
