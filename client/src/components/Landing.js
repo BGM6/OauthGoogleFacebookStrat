@@ -14,7 +14,7 @@ const Landing = () => {
 							<a className="btn facebook" href="/auth/facebook"><i className="fab fa-facebook-square"/> Facebook</a>
 						</div>
 					</div>
-				</div>
+				</div>11
 			</div>
 	);
 }
