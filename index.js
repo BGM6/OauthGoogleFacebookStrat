@@ -28,16 +28,15 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
+require('./routes/authRoutes')(app);
+
 //Always place this after your routes
 if (process.env.NODE_ENV === 'production') {
-	// Set static folder
 	app.use(express.static('client/build'));
 
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
-}
-
-require('./routes/authRoutes')(app);
+}-
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
