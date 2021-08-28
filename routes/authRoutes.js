@@ -15,7 +15,16 @@ module.exports = app => {
 		}
 	);
 
+	//LOGOUT
+	app.get('/api/logout', (req, res) => {
+		req.logout();
+		res.redirect('/');
+	});
 
+	//GET CURRENT USER
+	app.get('/api/current_user', (req, res) => {
+		res.send(req.user);
+	});
 	//FACEBOOK ROUTES
 	// app.get('/auth/facebook', passport.authenticate('facebook', {
 	// 		scope: ['public_profile', 'email']
@@ -32,15 +41,4 @@ module.exports = app => {
 	// 		res.redirect('/dashboard');
 	// 	}
 	// );
-
-	//LOGOUT
-	app.get('/api/logout', (req, res) => {
-		req.logout();
-		res.redirect('/');
-	});
-
-	//GET CURRENT USER
-	app.get('/api/current_user', (req, res) => {
-		res.send(req.user);
-	});
 };
