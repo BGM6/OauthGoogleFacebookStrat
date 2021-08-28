@@ -15,6 +15,7 @@ module.exports = app => {
 		}
 	);
 
+
 	//FACEBOOK ROUTES
 	// app.get('/auth/facebook', passport.authenticate('facebook', {
 	// 		scope: ['public_profile', 'email']
